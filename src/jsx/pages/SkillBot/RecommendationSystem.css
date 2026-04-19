@@ -1,0 +1,232 @@
+.recommend-page {
+  width: 100%;
+}
+
+.recommend-wrapper {
+  width: 100%;
+  min-height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 1rem 0 2rem;
+}
+
+.recommend-card {
+  width: 100%;
+  max-width: 760px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.07);
+  padding: 2rem;
+}
+
+.recommend-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.recommend-header h2 {
+  margin: 0;
+  color: #0f172a;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.recommend-header p {
+  margin: 0.7rem 0 0;
+  color: #64748b;
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
+
+.recommend-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.recommend-form label {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #334155;
+}
+
+.recommend-input {
+  width: 100%;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 0.82rem 0.95rem;
+  font-size: 0.96rem;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.recommend-input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.recommend-btn-row {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: 0.2rem;
+}
+
+.recommend-primary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 10px;
+  padding: 0.75rem 1.1rem;
+  font-weight: 700;
+  font-size: 0.94rem;
+  cursor: pointer;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: #ffffff;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.recommend-primary-btn:hover {
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(37, 99, 235, 0.25);
+}
+
+.recommend-primary-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.recommend-reset-btn {
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 0.75rem 1.1rem;
+  font-weight: 600;
+  font-size: 0.94rem;
+  cursor: pointer;
+  background: #f8fafc;
+  color: #334155;
+}
+
+.recommend-reset-btn:hover {
+  background: #f1f5f9;
+}
+
+.recommend-error {
+  border-left: 4px solid #ef4444;
+  background: #fef2f2;
+  color: #991b1b;
+  padding: 0.7rem 0.8rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.recommend-result-card {
+  margin-top: 1.5rem;
+  border: 1px solid #dbeafe;
+  background: #f8fbff;
+  border-radius: 12px;
+  padding: 1.2rem;
+}
+
+.recommend-result-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.4rem 0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.recommend-result-row:last-of-type {
+  border-bottom: none;
+}
+
+.recommend-label {
+  font-size: 0.9rem;
+  color: #475569;
+  font-weight: 600;
+}
+
+.recommend-value {
+  font-size: 0.95rem;
+  color: #0f172a;
+  font-weight: 700;
+}
+
+.recommend-prediction {
+  font-size: 0.92rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  border-radius: 999px;
+  padding: 0.25rem 0.7rem;
+}
+
+.recommend-prediction.theoretical {
+  background: #fef9c3;
+  color: #422006 !important;
+}
+
+.recommend-prediction.visual {
+  background: #ede9fe;
+  color: #2e1065 !important;
+}
+
+.recommend-prediction.practical {
+  background: #dcfce7;
+  color: #052e16 !important;
+}
+
+.recommend-mode-content {
+  margin-top: 1rem;
+}
+
+.recommend-action {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.visual-learning-section {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 1rem;
+  border-radius: 12px;
+}
+
+.visual-learning-section h3 {
+  margin-top: 0;
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+}
+
+.recommend-guidance {
+  margin: 0;
+  color: #334155;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .recommend-card {
+    padding: 1.25rem;
+  }
+
+  .recommend-header h2 {
+    font-size: 1.55rem;
+  }
+
+  .recommend-result-row {
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .recommend-btn-row {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,297 @@
+:root {
+  --lux-bg-primary: #0b0f19;
+  --lux-bg-secondary: #111827;
+  --lux-card-bg: #1f2937;
+  --lux-border: rgba(255, 255, 255, 0.1);
+  --lux-gold: #d4af37;
+  --lux-gold-soft: #f5d97e;
+  --lux-blue: #3b82f6;
+  --lux-purple: #7c3aed;
+  --lux-gradient: linear-gradient(135deg, #3b82f6 0%, #7c3aed 100%);
+  --lux-text-primary: #f9fafb;
+  --lux-text-secondary: #9ca3af;
+  --lux-shadow: 0 12px 28px rgba(0, 0, 0, 0.32);
+}
+
+body,
+#root,
+#main-wrapper,
+.content-body {
+  background: radial-gradient(circle at top right, rgba(59, 130, 246, 0.12), transparent 34%),
+    radial-gradient(circle at bottom left, rgba(124, 58, 237, 0.1), transparent 34%),
+    var(--lux-bg-primary) !important;
+  color: var(--lux-text-primary);
+}
+
+.header,
+.nav-header,
+.dlabnav,
+.footer,
+.page-titles,
+.card,
+.pe-card,
+.pe-results,
+.recommend-card,
+.entry-form-card,
+.results-portal,
+.project-chatbot-shell,
+.audit-form-section,
+.audit-results-section,
+.intel-card,
+.result-card,
+.recommend-result-card {
+  background: var(--lux-card-bg) !important;
+  border: 1px solid var(--lux-border) !important;
+  color: var(--lux-text-primary);
+  border-radius: 16px !important;
+  box-shadow: var(--lux-shadow);
+}
+
+.page-titles {
+  padding: 12px 16px;
+}
+
+.page-titles .breadcrumb-item,
+.page-titles .breadcrumb-item a {
+  color: var(--lux-text-secondary) !important;
+}
+
+.page-titles .breadcrumb-item.active a {
+  color: var(--lux-gold) !important;
+}
+
+.header,
+.nav-header,
+.dlabnav {
+  background-color: var(--lux-bg-secondary) !important;
+  border-color: var(--lux-border) !important;
+}
+
+.nav-header {
+  width: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+.header {
+  padding-left: 0 !important;
+}
+
+.header .header-content {
+  padding-left: 4.5rem !important;
+}
+
+.nav-control {
+  left: 1rem !important;
+  right: auto !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+}
+
+.dlabnav .metismenu > li > a,
+.dlabnav .metismenu ul a,
+.dlabnav .metismenu > li > a i,
+.dlabnav .nav-text {
+  color: var(--lux-text-secondary) !important;
+  transition: all 0.25s ease;
+}
+
+.dlabnav .metismenu > li:hover > a,
+.dlabnav .metismenu ul a:hover {
+  color: var(--lux-text-primary) !important;
+}
+
+.dlabnav .metismenu > li.mm-active > a,
+.dlabnav .metismenu ul a.mm-active {
+  color: var(--lux-gold) !important;
+}
+
+.dlabnav .metismenu ul a.mm-active,
+.dlabnav .metismenu > li.mm-active > a {
+  background: linear-gradient(90deg, rgba(212, 175, 55, 0.16), rgba(245, 217, 126, 0.08)) !important;
+  border-left: 3px solid var(--lux-gold);
+  border-radius: 10px;
+}
+
+button,
+.btn,
+.portal-submit,
+.btn-submit,
+.recommend-primary-btn,
+.pe-submit-btn,
+.project-chatbot-input-row button,
+.btn-refresh,
+.download-roadmap-btn,
+.pe-chat-toggle {
+  border: 0 !important;
+  border-radius: 12px !important;
+  color: #fff !important;
+  background: var(--lux-gradient) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.28);
+}
+
+button:hover,
+.btn:hover,
+.portal-submit:hover,
+.btn-submit:hover,
+.recommend-primary-btn:hover,
+.pe-submit-btn:hover,
+.project-chatbot-input-row button:hover,
+.btn-refresh:hover,
+.download-roadmap-btn:hover,
+.pe-chat-toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(124, 58, 237, 0.3);
+}
+
+.recommend-reset-btn,
+.pe-reset-btn,
+.btn-new-audit,
+.pe-level-btn {
+  background: rgba(212, 175, 55, 0.12) !important;
+  color: var(--lux-gold-soft) !important;
+  border: 1px solid rgba(212, 175, 55, 0.35) !important;
+  border-radius: 12px !important;
+}
+
+input,
+select,
+textarea,
+.form-control,
+.form-input,
+.recommend-input,
+.pe-input,
+.project-chatbot-input-row input,
+.audit-form input,
+.audit-form select {
+  background: #111827 !important;
+  color: var(--lux-text-primary) !important;
+  border: 1px solid var(--lux-border) !important;
+  border-radius: 12px !important;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+.form-control:focus,
+.form-input:focus,
+.recommend-input:focus,
+.pe-input:focus,
+.project-chatbot-input-row input:focus,
+.audit-form input:focus,
+.audit-form select:focus {
+  border-color: var(--lux-gold) !important;
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.18) !important;
+  outline: none !important;
+}
+
+label,
+p,
+span,
+small {
+  color: var(--lux-text-secondary);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong,
+.recommend-value,
+.pe-project-header h4,
+.user-intro h2 {
+  color: var(--lux-text-primary) !important;
+}
+
+.project-chatbot-bubble.assistant,
+.pe-chat-msg.assistant,
+.recommend-guidance,
+.recommend-error,
+.portal-error,
+.pe-error,
+.error-message {
+  background: rgba(17, 24, 39, 0.7) !important;
+  border: 1px solid var(--lux-border) !important;
+  color: var(--lux-text-primary) !important;
+}
+
+.Toastify__toast-theme--dark {
+  background: var(--lux-card-bg) !important;
+  color: var(--lux-text-primary) !important;
+  border: 1px solid var(--lux-border) !important;
+  border-radius: 12px !important;
+}
+
+.Toastify__progress-bar-theme--dark {
+  background: var(--lux-gradient) !important;
+}
+
+.Toastify__toast-icon svg {
+  fill: var(--lux-gold);
+}
+
+.talentlens-title {
+  letter-spacing: 0.4px;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.menu-toggle .talentlens-title {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+
+@media (max-width: 768px) {
+  .page-titles,
+  .recommend-card,
+  .project-chatbot-shell,
+  .entry-form-card,
+  .pe-card {
+    border-radius: 14px !important;
+  }
+}
+
+/* Global text enforcement */
+body,
+body p,
+body span,
+body label,
+body small,
+body li,
+body a,
+body td,
+body th,
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6,
+body strong,
+body em,
+body div,
+body input,
+body textarea,
+body select,
+body option,
+.breadcrumb-item,
+.breadcrumb-item a,
+.nav-text,
+.card-title,
+.form-control,
+.form-input,
+.recommend-input,
+.pe-input,
+.project-chatbot-input-row input {
+  color: #f9fafb !important;
+}
+
+body input::placeholder,
+body textarea::placeholder {
+  color: #f9fafb !important;
+  opacity: 0.75;
+}
