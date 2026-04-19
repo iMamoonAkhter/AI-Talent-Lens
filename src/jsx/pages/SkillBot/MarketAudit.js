@@ -269,7 +269,7 @@ const MarketAudit = () => {
                               Detected Field: {result.detected_field}
                            </p>
                         )}
-                        <button onClick={handleNewAnalysis} className="btn-new-audit">
+                        <button onClick={handleNewAnalysis} className="btn-new-audit text-white">
                            Analyze Another Resume
                         </button>
                      </div>
@@ -279,7 +279,7 @@ const MarketAudit = () => {
                            <div className="card-icon">📊</div>
                            <h3>Resume Score</h3>
                            <div className="roles-list">
-                              <span className="role-badge">
+                              <span className="role-badge text-white">
                                  {result.score}%
                               </span>
                            </div>
