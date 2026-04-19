@@ -58,32 +58,33 @@
 .pe-level-selector {
     display: flex;
     gap: 10px;
-    background: #111827;
-    border: 1px solid #334155;
-    padding: 6px;
+    background: transparent;
+    border: none;
+    padding: 0;
     border-radius: 10px;
 }
 
 .pe-level-btn {
     flex: 1;
     padding: 0.75rem;
-    border: none;
+    border: 1px solid #334155;
     background: transparent;
     border-radius: 6px;
     font-weight: 600;
-    color: #cbd5e1;
+    color: #ffffff;
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
 .pe-level-btn:hover {
-    background: rgba(148, 163, 184, 0.16);
-    color: #f8fafc;
+    background: rgba(148, 163, 184, 0.22);
+    color: #ffffff;
 }
 
 .pe-level-btn.active {
     background: linear-gradient(135deg, #2563eb, #1d4ed8);
     color: #ffffff;
+    border-color: #1d4ed8;
     box-shadow: 0 4px 12px rgba(37, 99, 235, 0.38);
     transform: translateY(-1px);
 }
@@ -131,23 +132,25 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: white;
+    background: linear-gradient(145deg, #111827 0%, #1f2937 100%);
     padding: 1.5rem 2rem;
     border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    border: 1px solid #334155;
+    box-shadow: 0 10px 28px rgba(0,0,0,0.28);
     margin-bottom: 2rem;
 }
 
 .pe-results-title h2 {
     margin: 0;
     font-size: 1.5rem;
-    color: #1e293b;
+    color: #f8fafc;
 }
 
 .pe-badge {
     display: inline-block;
-    background: #eff6ff;
-    color: #2563eb;
+    background: rgba(37, 99, 235, 0.24);
+    color: #dbeafe;
+    border: 1px solid rgba(96, 165, 250, 0.4);
     padding: 0.25rem 0.75rem;
     border-radius: 20px;
     font-size: 0.85rem;
@@ -179,17 +182,18 @@
 }
 
 .pe-skill-card {
-    background: white;
+    background: linear-gradient(145deg, #111827 0%, #1f2937 100%);
     padding: 1.5rem;
     border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    border: 1px solid #334155;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.25);
 }
 
 .pe-skill-card h3 {
     margin-top: 0;
     margin-bottom: 1rem;
     font-size: 1.2rem;
-    color: #334155;
+    color: #f8fafc;
 }
 
 .pe-tags {
@@ -199,9 +203,9 @@
 }
 
 .pe-tag {
-    background: #f8fafc;
-    border: 1px solid #e2e8f0;
-    color: #475569;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid #475569;
+    color: #e2e8f0;
     padding: 0.4rem 0.8rem;
     border-radius: 6px;
     font-size: 0.9rem;
@@ -209,20 +213,20 @@
 }
 
 .pe-skill-card.basic .pe-tag {
-    background: #f0fdf4;
-    border-color: #bbf7d0;
-    color: #166534;
+    background: rgba(16, 185, 129, 0.2);
+    border-color: rgba(16, 185, 129, 0.45);
+    color: #d1fae5;
 }
 
 .pe-skill-card.advanced .pe-tag {
-    background: #fff1f2;
-    border-color: #fecdd3;
-    color: #9f1239;
+    background: rgba(244, 63, 94, 0.18);
+    border-color: rgba(244, 63, 94, 0.45);
+    color: #ffe4e6;
 }
 
 .pe-section-title {
     font-size: 1.5rem;
-    color: #1e293b;
+    color: #f8fafc;
     margin-bottom: 1.5rem;
 }
 
@@ -233,10 +237,11 @@
 }
 
 .pe-project-card {
-    background: white;
+    background: linear-gradient(145deg, #111827 0%, #1f2937 100%);
     padding: 1.5rem;
     border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    border: 1px solid #334155;
+    box-shadow: 0 10px 28px rgba(0,0,0,0.24);
     display: flex;
     flex-direction: column;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -244,7 +249,7 @@
 
 .pe-project-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 14px 30px rgba(0,0,0,0.34);
 }
 
 .pe-project-header {
@@ -257,7 +262,7 @@
 .pe-project-header h4 {
     margin: 0;
     font-size: 1.25rem;
-    color: #0f172a;
+    color: #f8fafc;
     font-weight: 700;
 }
 
@@ -267,14 +272,29 @@
     border-radius: 4px;
     font-weight: 700;
     text-transform: uppercase;
+    border: 1px solid transparent;
 }
 
-.pe-level-indicator.easy { background: #dcfce7; color: #166534; }
-.pe-level-indicator.medium { background: #fef9c3; color: #854d0e; }
-.pe-level-indicator.hard { background: #fee2e2; color: #9f1239; }
+.pe-level-indicator.easy {
+    background: #dcfce7;
+    color: #14532d !important;
+    border-color: #86efac;
+}
+
+.pe-level-indicator.medium {
+    background: #fef08a;
+    color: #713f12 !important;
+    border-color: #facc15;
+}
+
+.pe-level-indicator.hard {
+    background: #fee2e2;
+    color: #881337 !important;
+    border-color: #fca5a5;
+}
 
 .pe-project-desc {
-    color: #64748b;
+    color: #cbd5e1;
     font-size: 0.95rem;
     line-height: 1.5;
     flex-grow: 1;
@@ -284,7 +304,7 @@
 .pe-project-tech strong {
     display: block;
     font-size: 0.9rem;
-    color: #334155;
+    color: #f1f5f9;
     margin-bottom: 0.5rem;
 }
 
@@ -295,8 +315,9 @@
 }
 
 .pe-tech-tag {
-    background: #e2e8f0;
-    color: #334155;
+    background: rgba(255, 255, 255, 0.1);
+    color: #e2e8f0;
+    border: 1px solid #475569;
     padding: 0.2rem 0.6rem;
     border-radius: 4px;
     font-size: 0.8rem;

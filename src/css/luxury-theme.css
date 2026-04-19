@@ -157,6 +157,20 @@ button:hover,
   border-radius: 12px !important;
 }
 
+.pe-level-btn {
+  background: transparent !important;
+  color: #f8fafc !important;
+  border: 1px solid #334155 !important;
+  border-radius: 8px !important;
+}
+
+.pe-level-btn.active {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8) !important;
+  color: #ffffff !important;
+  border-color: #1d4ed8 !important;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.38) !important;
+}
+
 input,
 select,
 textarea,
@@ -300,7 +314,6 @@ body option,
 .resource-link,
 .btn-new-audit,
 .recommend-reset-btn,
-.pe-level-btn,
 .audit-form .error-message,
 .recommend-error,
 .bg-white,
