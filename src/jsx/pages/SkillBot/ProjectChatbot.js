@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import ReactMarkdown from "react-markdown";
 import PageTitle from "../../layouts/PageTitle";
 import "./ProjectChatbot.css";
 
@@ -109,7 +110,7 @@ const ProjectChatbot = () => {
                 key={`${msg.role}-${index}`}
                 className={`project-chatbot-bubble ${msg.role === "user" ? "user" : "assistant"}`}
               >
-                {msg.content}
+                <ReactMarkdown>{msg.content}</ReactMarkdown>
               </div>
             ))}
             {loading && <div className="project-chatbot-bubble assistant loading">Thinking...</div>}

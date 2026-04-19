@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import ReactMarkdown from "react-markdown";
 import { toast } from "react-toastify";
 import PageTitle from "../../layouts/PageTitle";
 import "./ProjectEngine.css";
@@ -300,7 +301,7 @@ const ProjectEngine = () => {
                <div className="pe-chat-body" ref={chatBodyRef}>
                   {chatHistory.filter(msg => msg.role !== 'system').map((msg, idx) => (
                      <div key={idx} className={`pe-chat-msg ${msg.role}`}>
-                        {msg.content}
+                        <ReactMarkdown>{msg.content}</ReactMarkdown>
                      </div>
                   ))}
                   {isChatLoading && <div className="pe-chat-typing">Architect is typing...</div>}
