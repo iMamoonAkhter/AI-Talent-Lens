@@ -185,6 +185,9 @@ textarea,
   color: var(--lux-text-primary) !important;
   border: 1px solid var(--lux-border) !important;
   border-radius: 12px !important;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
 }
 
 input:focus,

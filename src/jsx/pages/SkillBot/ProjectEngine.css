@@ -42,6 +42,8 @@
 
 .pe-input {
     width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
     padding: 0.75rem 1rem;
     border: 1px solid #dce1e6;
     border-radius: 8px;
@@ -344,6 +346,14 @@
 }
 
 @media (max-width: 768px) {
+    .pe-card {
+        padding: 1.25rem;
+    }
+
+    .pe-form-group {
+        min-width: 0;
+    }
+
     .pe-skills-section {
         grid-template-columns: 1fr;
     }
