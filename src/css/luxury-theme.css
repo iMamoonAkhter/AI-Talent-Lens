@@ -303,8 +303,6 @@ body option,
 .pe-level-btn,
 .audit-form .error-message,
 .recommend-error,
-.field-badge,
-.badge,
 .bg-white,
 [class*="bg-white"],
 [style*="background: white"],
@@ -317,6 +315,33 @@ body option,
 .section-title,
 .section-subtitle {
   color: var(--lux-text-on-light) !important;
+}
+
+/* Dark badge/surface contrast guard: dark background -> white text */
+.field-badge,
+.card-badge,
+.badge,
+.badge-dark,
+.badge-secondary,
+.badge-primary,
+.badge-info,
+.badge-success,
+.badge-danger,
+.badge-warning,
+.timeline-badge.dark,
+[class*="badge"][style*="background:#000"],
+[class*="badge"][style*="background: #000"],
+[class*="badge"][style*="background:black"],
+[class*="badge"][style*="background: black"],
+[class*="badge"][style*="background:#111"],
+[class*="badge"][style*="background: #111"],
+[class*="badge"][style*="background:#1f2937"],
+[class*="badge"][style*="background: #1f2937"],
+[class*="badge"][style*="background:#0f172a"],
+[class*="badge"][style*="background: #0f172a"],
+[class*="badge"][style*="background:#64748b"],
+[class*="badge"][style*="background: #64748b"] {
+  color: #f9fafb !important;
 }
 
 .bg-white *,
