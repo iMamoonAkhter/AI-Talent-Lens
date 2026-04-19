@@ -10,6 +10,7 @@
   --lux-gradient: linear-gradient(135deg, #3b82f6 0%, #7c3aed 100%);
   --lux-text-primary: #f9fafb;
   --lux-text-secondary: #9ca3af;
+  --lux-text-on-light: #0f172a;
   --lux-shadow: 0 12px 28px rgba(0, 0, 0, 0.32);
 }
 
@@ -255,7 +256,7 @@ strong,
   }
 }
 
-/* Global text enforcement */
+/* Global text defaults (dark surfaces) */
 body,
 body p,
 body span,
@@ -288,6 +289,36 @@ body option,
 .pe-input,
 .project-chatbot-input-row input {
   color: #f9fafb !important;
+}
+
+/* Contrast correction for white/light backgrounds */
+.recommend-prediction,
+.recommend-prediction.theoretical,
+.recommend-prediction.visual,
+.recommend-prediction.practical,
+.role-badge,
+.resource-link,
+.btn-new-audit,
+.recommend-reset-btn,
+.pe-level-btn,
+.audit-form .error-message,
+.recommend-error,
+.field-badge,
+.badge,
+.bg-white,
+[class*="bg-white"],
+[style*="background: white"],
+[style*="background-color: white"],
+[style*="background:#fff"],
+[style*="background: #fff"] {
+  color: var(--lux-text-on-light) !important;
+}
+
+.bg-white *,
+[class*="bg-white"] *,
+[style*="background: white"] *,
+[style*="background-color: white"] * {
+  color: var(--lux-text-on-light) !important;
 }
 
 body input::placeholder,
