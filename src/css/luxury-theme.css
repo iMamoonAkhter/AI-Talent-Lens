@@ -310,7 +310,12 @@ body option,
 [style*="background: white"],
 [style*="background-color: white"],
 [style*="background:#fff"],
-[style*="background: #fff"] {
+[style*="background: #fff"],
+.powerbi-card,
+.powerbi-card .card-title,
+.powerbi-card .card-description,
+.section-title,
+.section-subtitle {
   color: var(--lux-text-on-light) !important;
 }
 
