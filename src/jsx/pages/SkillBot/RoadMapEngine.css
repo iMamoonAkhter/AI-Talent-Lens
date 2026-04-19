@@ -180,50 +180,56 @@
 }
 
 .intel-card {
-    background: #fff;
+    background: linear-gradient(145deg, #111827 0%, #1f2937 100%);
     padding: 30px;
     border-radius: 20px;
-    border: 1px solid var(--border-color);
+    border: 1px solid #334155;
 }
 
 .intel-card h3 {
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: var(--text-sub);
+    color: #93c5fd;
     margin-bottom: 20px;
 }
 
 .intel-chip {
     display: inline-block;
     padding: 8px 18px;
-    background: var(--bg-page);
-    border: 1px solid var(--border-color);
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid #475569;
     border-radius: 10px;
     margin: 4px;
     font-size: 0.9rem;
     font-weight: 600;
+    color: #f8fafc;
 }
 
 .skill-tiers .tier { margin-bottom: 15px; }
-.skill-tiers label { font-size: 0.7rem; color: var(--text-sub); display: block; }
-.skill-tiers p { font-weight: 600; margin: 5px 0 0; }
+.skill-tiers label { font-size: 0.7rem; color: #93c5fd; display: block; }
+.skill-tiers p { font-weight: 600; margin: 5px 0 0; color: #f8fafc; }
 
 /* Resources */
 .resources-section {
-    background: #fff;
+    background: linear-gradient(145deg, #111827 0%, #1f2937 100%);
     padding: 30px;
     border-radius: 24px;
-    border: 1px solid var(--border-color);
+    border: 1px solid #334155;
     margin-bottom: 50px;
+}
+
+.resources-section h3 {
+    color: #f8fafc;
 }
 
 .resource-btn {
     text-decoration: none;
-    color: var(--text-main);
+    color: #f8fafc;
     padding: 10px 20px;
     border-radius: 12px;
-    border: 1px solid var(--border-color);
+    border: 1px solid #475569;
+    background: rgba(255, 255, 255, 0.06);
     display: inline-block;
     margin-right: 12px;
     font-size: 0.9rem;
@@ -232,8 +238,9 @@
 }
 
 .resource-btn:hover {
-    border-color: var(--brand-blue);
-    background: rgba(37, 99, 235, 0.05);
+    border-color: #60a5fa;
+    background: rgba(37, 99, 235, 0.22);
+    color: #ffffff;
 }
 
 /* Timeline Blueprint */

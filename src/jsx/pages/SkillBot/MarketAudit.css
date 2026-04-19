@@ -215,10 +215,22 @@
     margin: 0 auto;
 }
 
+.btn-new-audit.text-white {
+    background: #0f172a;
+    border-color: #0f172a;
+    color: #ffffff !important;
+}
+
 .btn-new-audit:hover {
     background: #3b82f6;
     color: white;
     transform: translateY(-2px);
+}
+
+.btn-new-audit.text-white:hover {
+    background: #1e293b;
+    border-color: #1e293b;
+    color: #ffffff !important;
 }
 
 .results-grid {
@@ -259,6 +271,16 @@
     letter-spacing: -0.3px;
 }
 
+.result-card.score-card {
+    background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+    border-color: #334155;
+}
+
+.result-card.score-card h3,
+.result-card.score-card .card-icon {
+    color: #ffffff !important;
+}
+
 .roles-list,
 .skills-list {
     display: flex;
@@ -277,6 +299,12 @@
     font-weight: 500;
     border: 1px solid #d1d5db;
     transition: all 0.3s ease;
+}
+
+.role-badge.text-white {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: #ffffff !important;
+    border-color: #334155;
 }
 
 .role-badge:hover {

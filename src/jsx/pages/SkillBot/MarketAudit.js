@@ -275,7 +275,7 @@ const MarketAudit = () => {
                      </div>
 
                      <div className="results-grid">
-                        <div className="result-card">
+                        <div className="result-card score-card">
                            <div className="card-icon">📊</div>
                            <h3>Resume Score</h3>
                            <div className="roles-list">

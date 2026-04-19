@@ -58,9 +58,10 @@
 .pe-level-selector {
     display: flex;
     gap: 10px;
-    background: #f1f5f9;
-    padding: 5px;
-    border-radius: 8px;
+    background: #111827;
+    border: 1px solid #334155;
+    padding: 6px;
+    border-radius: 10px;
 }
 
 .pe-level-btn {
@@ -70,15 +71,21 @@
     background: transparent;
     border-radius: 6px;
     font-weight: 600;
-    color: #64748b;
+    color: #cbd5e1;
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
+.pe-level-btn:hover {
+    background: rgba(148, 163, 184, 0.16);
+    color: #f8fafc;
+}
+
 .pe-level-btn.active {
-    background: #ffffff;
-    color: #3b82f6;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.38);
+    transform: translateY(-1px);
 }
 
 .pe-submit-btn {
