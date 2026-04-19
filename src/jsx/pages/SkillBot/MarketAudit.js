@@ -3,7 +3,8 @@ import { toast } from 'react-toastify';
 import PageTitle from "../../layouts/PageTitle";
 import './MarketAudit.css';
 
-const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:8000';
+const API_BASE_URL = (process.env.REACT_APP_API_URL || 'http://localhost:5000').replace(/\/$/, '');
+const FALLBACK_FASTAPI_URL = 'http://localhost:8000';
 const FALLBACK_FLASK_URL = 'http://localhost:5000';
 const PROCESSING_TOAST = 'Processing your request...';
 const SUCCESS_TOAST = 'Operation completed successfully';
@@ -26,15 +27,21 @@ const MarketAudit = () => {
    const [selectedFile, setSelectedFile] = useState(null);
    const [selectedField, setSelectedField] = useState('');
    const [fieldOptions, setFieldOptions] = useState([]);
+   const [fieldLoadError, setFieldLoadError] = useState(null);
    const [result, setResult] = useState(null);
    const [loading, setLoading] = useState(false);
    const [error, setError] = useState(null);
 
    useEffect(() => {
       const fetchFields = async () => {
+         const apiBaseHasApiPrefix = API_BASE_URL.endsWith('/api');
          const endpoints = [
+            apiBaseHasApiPrefix
+               ? `${API_BASE_URL}/resume-fields`
+               : `${API_BASE_URL}/api/resume-fields`,
             `${API_BASE_URL}/resume-fields`,
             `${FALLBACK_FLASK_URL}/api/resume-fields`,
+            `${FALLBACK_FASTAPI_URL}/resume-fields`,
          ];
 
          for (const endpoint of endpoints) {
@@ -43,6 +50,7 @@ const MarketAudit = () => {
                const data = await response.json();
                if (response.ok && Array.isArray(data.fields) && data.fields.length > 0) {
                   setFieldOptions(data.fields);
+                  setFieldLoadError(null);
                   return;
                }
             } catch (_err) {
@@ -50,7 +58,7 @@ const MarketAudit = () => {
             }
          }
 
-         setError('Unable to load resume fields from backend.');
+         setFieldLoadError('Unable to load resume fields from backend.');
       };
 
       fetchFields();
@@ -59,6 +67,12 @@ const MarketAudit = () => {
    const handleSubmit = async (e) => {
       e.preventDefault();
       setError(null);
+
+      if (fieldLoadError && fieldOptions.length === 0) {
+         setError(fieldLoadError);
+         toast.error(ERROR_TOAST);
+         return;
+      }
 
       if (!selectedFile) {
          setError('Please upload a PDF resume file');
@@ -87,9 +101,14 @@ const MarketAudit = () => {
          formData.append('file', selectedFile);
          formData.append('field', selectedField);
 
+         const apiBaseHasApiPrefix = API_BASE_URL.endsWith('/api');
          const endpoints = [
+            apiBaseHasApiPrefix
+               ? `${API_BASE_URL}/analyze-resume`
+               : `${API_BASE_URL}/api/analyze-resume`,
             `${API_BASE_URL}/analyze-resume`,
             `${FALLBACK_FLASK_URL}/api/analyze-resume`,
+            `${FALLBACK_FASTAPI_URL}/analyze-resume`,
          ];
 
          let lastError = 'Resume analysis failed';
