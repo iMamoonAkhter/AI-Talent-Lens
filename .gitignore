@@ -4,6 +4,8 @@ node_modules/
 # Build output
 build/
 dist/
+!src/vendor/bootstrap-select/dist/
+!src/vendor/bootstrap-select/dist/**
 
 # Logs
 npm-debug.log*
