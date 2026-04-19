@@ -3,9 +3,10 @@ import { toast } from 'react-toastify';
 import PageTitle from "../../layouts/PageTitle";
 import './MarketAudit.css';
 
-const API_BASE_URL = (process.env.REACT_APP_API_URL || 'http://localhost:5000').replace(/\/$/, '');
+const API_BASE_URL = (process.env.REACT_APP_API_URL || '').replace(/\/$/, '');
 const FALLBACK_FASTAPI_URL = 'http://localhost:8000';
 const FALLBACK_FLASK_URL = 'http://localhost:5000';
+const IS_LOCAL_DEV = typeof window !== 'undefined' && /^(localhost|127\.0\.0\.1)$/.test(window.location.hostname);
 const PROCESSING_TOAST = 'Processing your request...';
 const SUCCESS_TOAST = 'Operation completed successfully';
 const ERROR_TOAST = 'Something went wrong. Please try again.';
@@ -34,15 +35,24 @@ const MarketAudit = () => {
 
    useEffect(() => {
       const fetchFields = async () => {
-         const apiBaseHasApiPrefix = API_BASE_URL.endsWith('/api');
-         const endpoints = [
-            apiBaseHasApiPrefix
-               ? `${API_BASE_URL}/resume-fields`
-               : `${API_BASE_URL}/api/resume-fields`,
-            `${API_BASE_URL}/resume-fields`,
-            `${FALLBACK_FLASK_URL}/api/resume-fields`,
-            `${FALLBACK_FASTAPI_URL}/resume-fields`,
-         ];
+         const endpoints = [];
+
+         if (API_BASE_URL) {
+            const apiBaseHasApiPrefix = API_BASE_URL.endsWith('/api');
+            endpoints.push(
+               apiBaseHasApiPrefix
+                  ? `${API_BASE_URL}/resume-fields`
+                  : `${API_BASE_URL}/api/resume-fields`,
+               `${API_BASE_URL}/resume-fields`
+            );
+         }
+
+         if (IS_LOCAL_DEV) {
+            endpoints.push(
+               `${FALLBACK_FLASK_URL}/api/resume-fields`,
+               `${FALLBACK_FASTAPI_URL}/resume-fields`
+            );
+         }
 
          for (const endpoint of endpoints) {
             try {
@@ -101,15 +111,24 @@ const MarketAudit = () => {
          formData.append('file', selectedFile);
          formData.append('field', selectedField);
 
-         const apiBaseHasApiPrefix = API_BASE_URL.endsWith('/api');
-         const endpoints = [
-            apiBaseHasApiPrefix
-               ? `${API_BASE_URL}/analyze-resume`
-               : `${API_BASE_URL}/api/analyze-resume`,
-            `${API_BASE_URL}/analyze-resume`,
-            `${FALLBACK_FLASK_URL}/api/analyze-resume`,
-            `${FALLBACK_FASTAPI_URL}/analyze-resume`,
-         ];
+         const endpoints = [];
+
+         if (API_BASE_URL) {
+            const apiBaseHasApiPrefix = API_BASE_URL.endsWith('/api');
+            endpoints.push(
+               apiBaseHasApiPrefix
+                  ? `${API_BASE_URL}/analyze-resume`
+                  : `${API_BASE_URL}/api/analyze-resume`,
+               `${API_BASE_URL}/analyze-resume`
+            );
+         }
+
+         if (IS_LOCAL_DEV) {
+            endpoints.push(
+               `${FALLBACK_FLASK_URL}/api/analyze-resume`,
+               `${FALLBACK_FASTAPI_URL}/analyze-resume`
+            );
+         }
 
          let lastError = 'Resume analysis failed';
 
