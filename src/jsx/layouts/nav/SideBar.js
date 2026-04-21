@@ -58,6 +58,7 @@ class SideBar extends Component {
          careerInsights = [
             "ai-resume-analyzer",
             "project-chatbot",
+            "interview-ai",
             "recommendation-system",
          ],
          charts = [
@@ -112,8 +113,8 @@ class SideBar extends Component {
                         </li>
                         <li>
                            <Link
-                              className={`${path === "project-chatbot" ? "mm-active" : ""}`}
-                              to="/project-chatbot"
+                              className={`${path === "interview-ai" ? "mm-active" : ""}`}
+                              to="/interview-ai"
                               onClick={() => this.props.onClick()}
                            >
                               AI Interviewer

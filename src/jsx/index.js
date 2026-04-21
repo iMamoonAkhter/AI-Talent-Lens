@@ -20,6 +20,7 @@ import SkillsLearningIntelligence from "./pages/SkillBot/SkillsLearningIntellige
 import RecommendationSystem from "./pages/SkillBot/RecommendationSystem";
 import ProjectEngine from "./pages/SkillBot/ProjectEngine";
 import ProjectChatbot from "./pages/SkillBot/ProjectChatbot";
+import InterviewAI from "./pages/SkillBot/InterviewAI";
 
 const Markup = () => {
 	let path = window.location.pathname;
@@ -34,6 +35,7 @@ const Markup = () => {
 		{ url: "ai-resume-analyzer", component: MarketAudit },
 		{ url: "project-engine", component: ProjectEngine },
 		{ url: "project-chatbot", component: ProjectChatbot },
+		{ url: "interview-ai", component: InterviewAI },
 		{ url: "recommendation-system", component: RecommendationSystem },
 		{ url: "student-demographic-overview", component: StudentDemographicOverview },
 		{ url: "skills-learning-intelligence", component: SkillsLearningIntelligence },
